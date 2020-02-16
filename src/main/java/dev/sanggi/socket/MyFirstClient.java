@@ -24,6 +24,7 @@ public class MyFirstClient extends Thread {
 			out.flush();
 
 			String str = in.readLine();
+			log.info(str);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

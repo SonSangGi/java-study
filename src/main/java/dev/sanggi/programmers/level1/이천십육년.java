@@ -22,6 +22,10 @@ public class 이천십육년 {
 	 * 2016년 a월 b일은 실제로 있는 날입니다. (13월 26일이나 2월 45일같은 날짜는 주어지지 않습니다)
 	 */
 	public static String solution(int a, int b) {
-		return LocalDate.of(2016,a,b).getDayOfWeek().getDisplayName(TextStyle.SHORT, Locale.ENGLISH).toUpperCase();
+		return LocalDate
+				.of(2016,a,b)
+				.getDayOfWeek()
+				.getDisplayName(TextStyle.SHORT, Locale.ENGLISH)
+				.toUpperCase();
 	}
 }

@@ -24,7 +24,7 @@ public class MyFirstServer extends Thread {
 		 * serverSocket.bind(new InetSocketAddress(포트번호));
 		 * 위의 로직이 실행된다.
 		 *
-		 * 특정 IP만 연결할 수 있는 방법은
+		 * 특정 IP만 연결할 수 있는 방법은s
 		 * new InetSocketAddress("아이피번호",포트번호);
 		 * 위 InetSocketAddress로 바인드 한다.
 		 *
