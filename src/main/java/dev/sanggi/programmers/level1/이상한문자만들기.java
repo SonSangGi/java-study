@@ -1,6 +1,7 @@
 package dev.sanggi.programmers.level1;
 
 import java.util.Arrays;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class 이상한문자만들기 {
@@ -35,5 +36,14 @@ public class 이상한문자만들기 {
 			answer += " ";
 		}
 		return answer;
+	}
+
+	public static String solution2(String s) {
+		return Arrays.stream(s.split(" "))
+				.map(x -> x.split(""))
+				.map(x -> IntStream.range(0,x.length)
+						.mapToObj(i -> i == x.length - 1 ?  x[i] + " " :  i % 2 == 0 ? x[i].toUpperCase() : x[i]  )
+						.collect(Collectors.joining()))
+		.collect(Collectors.joining());
 	}
 }
