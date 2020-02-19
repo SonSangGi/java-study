@@ -11,7 +11,11 @@ public class 같은숫자는싫어 {
 	}
 
 	public static int[] solution(int[] arr) {
-		return Arrays.stream(arr).mapToObj(i -> (Integer)i).collect(Collectors.toSet()).stream().mapToInt(i -> i).toArray();
+		return Arrays.stream(arr)
+				.mapToObj(Integer::valueOf)
+				.collect(Collectors.toSet()).stream()
+				.mapToInt(i -> i)
+				.toArray();
 	}
 
 	public static int[] solution2(int[] arr) {

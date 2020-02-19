@@ -33,7 +33,10 @@ public class K번째수 {
 		int[] answer = new int[commands.length];
 
 		for (int i = 0; i < commands.length; i++)
-			answer[i] = IntStream.range(commands[i][0] - 1, commands[i][1]).map(j -> array[j]).sorted().toArray()[commands[i][2]];
+			answer[i] = IntStream.range(commands[i][0] - 1, commands[i][1])
+					.map(j -> array[j])
+					.sorted()
+					.toArray()[commands[i][2] - 1];
 
 		return answer;
 	}

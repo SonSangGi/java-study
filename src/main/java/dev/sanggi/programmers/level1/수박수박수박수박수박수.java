@@ -25,6 +25,8 @@ public class 수박수박수박수박수박수 {
 	 * @return
 	 */
 	public static String solution(int n) {
-		return IntStream.range(0,n).mapToObj(i -> i % 2 == 0 ? "수" : "박").collect(Collectors.joining());
+		return IntStream.range(0,n)
+				.mapToObj(i -> i % 2 == 0 ? "수" : "박")
+				.collect(Collectors.joining());
 	}
 }

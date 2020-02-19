@@ -15,7 +15,10 @@ public class 나누어떨어지는숫자배열 {
 
 	public static int[] solution(int[] arr, int divisor) {
 
-		int[] answer = Arrays.stream(arr).filter(i -> i % divisor == 0).sorted().toArray();
+		int[] answer = Arrays.stream(arr)
+				.filter(i -> i % divisor == 0)
+				.sorted()
+				.toArray();
 
 		return answer.length > 0 ? answer : new int[]{-1};
 	}
