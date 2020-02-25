@@ -10,8 +10,6 @@ public class 직사각형별찍기 {
 		int a = sc.nextInt();
 		int b = sc.nextInt();
 
-		String
-
-		IntStream.range(0, b).forEach(i -> System.out.println(String.));
+		IntStream.range(0, b).forEach(i -> System.out.println("*".repeat(a)));
 	}
 }
