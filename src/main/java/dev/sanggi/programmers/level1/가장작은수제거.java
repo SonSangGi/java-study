@@ -1,8 +1,6 @@
 package dev.sanggi.programmers.level1;
 
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.stream.Collectors;
 
 public class 가장작은수제거 {
 	public static void main(String[] args) {
