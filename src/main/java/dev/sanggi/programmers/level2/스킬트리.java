@@ -21,27 +21,47 @@ public class 스킬트리 {
 	 */
 
 	public static void main(String[] args) {
-		int a = solution("CBD", new String[]{"BACDE", "CABND", "CBADF", "AECB", "BDA"});
+		int a = solution("CBD", new String[]{"BACDE", "CBADF", "AECB", "BDA"});
 		System.out.println(a);
 	}
 
 	public static int solution(String skill, String[] skill_trees) {
 
 		int idx = 0;
+
 		String[] skillArr = skill.split("");
 
 		for (final String skillTree : skill_trees) {
 
-			if(!skillTree.contains(skillArr[0])) break;
+			if (!skillTree.contains(skillArr[0])) break;
 
-			String temp = "";
+			System.out.println("[IN] - [" + skillTree + "]");
 
+			boolean isComplated = false;
+			int prevIdx = skillTree.indexOf(skillArr[0]);
+
+			for (int i = 1; i < skillArr.length; i++) {
+				if (!skillTree.contains(skillArr[i])) continue;
+
+				int currentIdx = skillTree.indexOf(skillArr[i]);
+
+				System.out.print(skillTree.substring(prevIdx, prevIdx + 1) + "" + prevIdx + " : ");
+				if (currentIdx > 0)
+					System.out.println(skillTree.substring(currentIdx, currentIdx + 1) + "" + currentIdx + "");
+				else System.out.println(currentIdx);
+
+				if (prevIdx < currentIdx)
+					isComplated = true;
+				else {
+					isComplated = false;
+					break;
+				}
+				prevIdx = currentIdx;
+			}
+			if (isComplated) idx++;
+			System.out.println(isComplated);
+			System.out.println("[OUT] - [" + skillTree + "]");
 		}
-
-		boolean a = "BACDE".matches("[B]+");
-
-		System.out.println(a);
-
 
 		return idx;
 	}
