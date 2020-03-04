@@ -6,6 +6,6 @@ public class 문자다루기기본 {
 		System.out.println(solution("5.569"));
 	}
 	public static boolean solution(String s) {
-		return s.matches("[1-9]{4}|[1-9]{6}");
+		return s.matches("[0-9]{4}|[0-9]{6}");
 	}
 }
