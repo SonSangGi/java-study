@@ -8,15 +8,13 @@ public class x만큼간격이있는n개의숫자 {
 	 * . 다음 제한 조건을 보고, 조건을 만족하는 함수, solution을 완성해주세요.
 	 */
 	public static void main(String[] args) {
-		for (long l : solution(2, 5)) {
-			System.out.println(l);
-		}
+		System.out.println(solution(0, 0));
 	}
 
 	public static long[] solution(int x, int n) {
 
-		return IntStream.range(1,n + 1)
-				.mapToLong(i -> i * x)
+		return IntStream.range(1, n + 1)
+				.mapToLong(i -> i * Long.valueOf(x))
 				.toArray();
 	}
 }
