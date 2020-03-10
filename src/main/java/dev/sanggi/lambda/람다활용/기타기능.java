@@ -1,4 +1,4 @@
-package dev.sanggi.codingtest.lambda.람다활용;
+package dev.sanggi.lambda.람다활용;
 
 import java.util.Arrays;
 import java.util.Comparator;

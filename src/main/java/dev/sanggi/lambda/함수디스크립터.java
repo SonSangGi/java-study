@@ -1,7 +1,6 @@
-package dev.sanggi.codingtest.lambda;
+package dev.sanggi.lambda;
 
 import java.util.concurrent.Callable;
-import java.util.function.Predicate;
 
 public class 함수디스크립터 {
 	public static void main(String[] args) throws Exception {

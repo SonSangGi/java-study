@@ -1,4 +1,4 @@
-package dev.sanggi.codingtest.lambda;
+package dev.sanggi.lambda;
 
 public class 함수형인터페이스 {
 

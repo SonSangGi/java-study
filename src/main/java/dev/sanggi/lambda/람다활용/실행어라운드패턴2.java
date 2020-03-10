@@ -1,6 +1,6 @@
-package dev.sanggi.codingtest.lambda.람다활용;
+package dev.sanggi.lambda.람다활용;
 
-import dev.sanggi.codingtest.lambda.람다활용.Function.BufferedReaderProcessor;
+import dev.sanggi.lambda.람다활용.Function.BufferedReaderProcessor;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

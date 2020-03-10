@@ -1,6 +1,6 @@
-package dev.sanggi.codingtest.lambda.람다활용;
+package dev.sanggi.lambda.람다활용;
 
-import dev.sanggi.codingtest.lambda.람다활용.Function.MyFunction;
+import dev.sanggi.lambda.람다활용.Function.MyFunction;
 
 import java.util.ArrayList;
 import java.util.Arrays;
