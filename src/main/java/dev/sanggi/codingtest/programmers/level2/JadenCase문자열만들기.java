@@ -1,7 +1,8 @@
 package dev.sanggi.codingtest.programmers.level2;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class JadenCase문자열만들기 {
 
@@ -22,13 +23,43 @@ public class JadenCase문자열만들기 {
      */
 
     public static void main(String[] args) {
-        System.out.println(solution("3people unFollowed me"));
+        System.out.println(solution2("3people unFollowed me "));
     }
 
+    // #2
+    public static String solution2(final String s) {
+
+        return IntStream.range(0, s.length())
+                .map(i -> i > 0 && s.charAt(i - 1) != ' '
+                        ? Character.toLowerCase(s.charAt(i))
+                        :Character.toUpperCase(s.charAt(i)))
+                .mapToObj(i ->Character.toString((char)i))
+                .collect(Collectors.joining());
+    }
+
+    // #1
     public static String solution(String s) {
-        return Arrays.stream(s.split(" "))
-                .map(str -> str.toLowerCase().replace(str.charAt(0), Character.toUpperCase(str.charAt(0))).concat(" "))
-                .collect(Collectors.joining())
-                .substring(0, s.length());
+
+        ArrayList<Integer> blankIndexList = new ArrayList<>();
+        blankIndexList.add(0);
+
+        int index = 0;
+
+        while (true) {
+            index = s.indexOf(' ', index);
+            if (index > 0 && index == s.length()) blankIndexList.add(++index);
+            else break;
+        }
+
+        String answer = "";
+
+        for (int i = 0; i < blankIndexList.size(); i++) {
+            answer += Character.toUpperCase(s.charAt(blankIndexList.get(i)));
+            answer += blankIndexList.size() - 1 != i
+                    ? s.substring(blankIndexList.get(i) + 1, blankIndexList.get(i + 1)).toLowerCase()
+                    : s.substring(blankIndexList.get(i) + 1).toLowerCase();
+        }
+
+        return answer;
     }
 }

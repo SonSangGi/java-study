@@ -44,21 +44,14 @@ public class 최솟값만들기 {
     }
 
     public static int solution(int[] A, int[] B) {
+        Arrays.sort(A);
+        Arrays.sort(B);
 
-        int[] concat = new int[A.length + B.length];
+        int answer = 0;
 
-        for (int i = 0; i < concat.length; i++) {
-            concat[i] = i < A.length ? A[i] : B[i - B.length];
-        }
+        for (int i = 0; i < A.length; i++)
+            answer += A[i] * B[A.length - 1 - i];
 
-        Arrays.sort(concat);
-
-        int sum = 0;
-
-        for (int i = 0; i < concat.length / 2; i++) {
-            sum += concat[i] * concat[concat.length - 1 - i];
-        }
-
-        return sum;
+        return answer;
     }
 }
