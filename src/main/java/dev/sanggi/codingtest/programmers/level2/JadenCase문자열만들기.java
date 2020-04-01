@@ -23,7 +23,7 @@ public class JadenCase문자열만들기 {
      */
 
     public static void main(String[] args) {
-        System.out.println(solution2("3people unFollowed me "));
+        System.out.println(solution3("3people unFollowed me "));
     }
 
     // #2
@@ -58,6 +58,20 @@ public class JadenCase문자열만들기 {
             answer += blankIndexList.size() - 1 != i
                     ? s.substring(blankIndexList.get(i) + 1, blankIndexList.get(i + 1)).toLowerCase()
                     : s.substring(blankIndexList.get(i) + 1).toLowerCase();
+        }
+
+        return answer;
+    }
+
+    // 다른사람풀이
+    public static String solution3(String s) {
+        String answer = "";
+        boolean flag = true;
+        String[] arr = s.toLowerCase().split("");
+
+        for (String str : arr) {
+            answer += flag ? str.toUpperCase() : str;
+            flag = str.equals(" ") ? true : false;
         }
 
         return answer;
